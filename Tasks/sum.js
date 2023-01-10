@@ -3,18 +3,12 @@
 
 const sumNumbers = (array) => {
   let sum = 0;
-  if (!Array.isArray(array)) {
-    return 'It is not an array';
-  }
+  if (!Array.isArray(array)) return 'It is not an array';
 
-  if (array.length === 0) {
-    return 0;
-  }
+  if (array.length === 0) return 0;
   
   for (let item of array) {
-    if (typeof(item) === 'number') {
-        sum += item; 
-    }
+    if (typeof(item) === 'number') sum += item; 
   }
   
 return sum;
