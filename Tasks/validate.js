@@ -2,7 +2,15 @@
 'use strict';
 
 const validateName = (name) => {
-    if (typeof(name) !== 'string' || name.trim() === '' || !name.includes(' ')) {
+    if (typeof(name) !== 'string') {
+        return false;
+    }
+
+    if (name.trim() === '') {
+        return false;
+    }
+
+    if (!name.includes(' ')) {
         return false;
     }
   
