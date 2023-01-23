@@ -1,7 +1,7 @@
 // Validate person name
 'use strict';
 
-const isValid = (name) => {
+const validateName = (name) => {
     if (typeof(name) !== 'string' || name.trim() === '' || !name.includes(' ')) {
         return false;
     }
@@ -16,4 +16,4 @@ const isValid = (name) => {
     return true;
 };
 
-require('../Tests/validate.js')(isValid);
+require('../Tests/validate.js')(validateName);
