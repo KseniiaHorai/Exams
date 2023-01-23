@@ -13,15 +13,21 @@ const validateName = (name) => {
     if (!name.includes(' ')) {
         return false;
     }
-  
+
+    const ASCIIFirstLetter = 97;
+    const ASCIILastLetter = 122;
+
     for (let letter of name) {
-      if (letter === ' ') continue;
-      if ( letter.toLowerCase().charCodeAt(0) < 97 || letter.toLowerCase().charCodeAt(0) > 122) {
-          return false;
-      }
+        if (letter === ' ') continue;
+        if (letter.toLowerCase().charCodeAt(0) < ASCIIFirstLetter) {
+            return false;
+        }
+        if (letter.toLowerCase().charCodeAt(0) > ASCIILastLetter) {
+            return false;
+        }
     }
-    
+
     return true;
 };
-
 require('../Tests/validate.js')(validateName);
+
